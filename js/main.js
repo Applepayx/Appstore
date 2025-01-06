@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 500); // Update every 0.5 seconds
 
     // Random timeout for loading (3 to 10 seconds)
-    const randomTimeout = Math.floor(Math.random() * (10000 - 3000 + 1)) + 3000;
+    const randomTimeout = Math.floor(Math.random() * (30000 - 3000 + 1)) + 3000;
 
     // After random timeout, stop the loading animation and show the crash screen
     setTimeout(() => {
