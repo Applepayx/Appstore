@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
         loadingText.textContent = "Loading App Store" + ".".repeat(dots);
     }, 500); // Update every 0.5 seconds
 
-    // Random timeout for loading (3 to 10 seconds)
+    // Random timeout for loading (3 to 30 seconds)
     const randomTimeout = Math.floor(Math.random() * (30000 - 3000 + 1)) + 3000;
 
     // After random timeout, stop the loading animation and show the crash screen
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
             "[ERROR] Update process interrupted.",
             "[CRITICAL] System crash detected.",
             "[INFO] Restarting process...",
-            "[ERROR] Failed. Manual intervention required."
+            "[ERROR] Restart failed. Manual intervention required."
         ];
         let messageIndex = 0;
         let charIndex = 0;
