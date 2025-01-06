@@ -1,46 +1,48 @@
-
-body {
-    font-family: Arial, sans-serif;
+/* Ensure the entire viewport and document is black */
+html, body {
     margin: 0;
     padding: 0;
-    background: black;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    height: 100%;
-    width: 100%;
+    background: black; /* Set background color to black */
+    color: white; /* Default text color */
+    overflow: hidden; /* Disable scrolling */
+    height: 100%; /* Ensure full height coverage */
+    width: 100%; /* Ensure full width coverage */
 }
+
 .hidden {
-    display: none;
+    display: none; /* Hide elements when needed */
 }
+
 .loading-screen {
-    text-align: center;
+    text-align: center; /* Center content horizontally */
 }
+
 .loading-logo {
-    width: 100px;
-    height: auto;
-    margin-bottom: 1rem;
+    width: 100px; /* Set the size of the loading image */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 1rem; /* Add spacing below the image */
 }
+
 #loading-text {
-    font-size: 1.5rem;
+    font-size: 1.5rem; /* Make the loading text smaller */
 }
+
 .crash-screen {
-    background: black;
-    color: lime;
-    font-family: monospace;
-    padding: 2rem;
-    border: 2px solid red;
-    text-align: left;
-    width: 90%;
-    max-width: 600px;
+    background: black; /* Keep crash screen background black */
+    color: lime; /* Set console text color */
+    font-family: monospace; /* Use monospace font for console effect */
+    padding: 2rem; /* Add padding around the console area */
+    border: 2px solid red; /* Add a red border to the console */
+    text-align: left; /* Align text to the left */
+    width: 90%; /* Set width to 90% of the viewport */
+    max-width: 600px; /* Limit the maximum width */
 }
+
 .console {
-    color: red;
-    background: black;
-    padding: 1rem;
-    border-radius: 5px;
-    overflow: auto;
-    max-height: 50vh;
+    color: red; /* Set text color for console messages */
+    background: black; /* Console background color */
+    padding: 1rem; /* Add padding inside the console box */
+    border-radius: 5px; /* Round the corners of the console box */
+    overflow: auto; /* Enable scrolling inside the console if content overflows */
+    max-height: 50vh; /* Limit the console height to half of the viewport height */
 }
