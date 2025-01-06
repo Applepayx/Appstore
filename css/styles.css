@@ -28,7 +28,7 @@ html, body {
 }
 
 #loading-text {
-    font-size: 1.5rem; /* Adjust the size of the "Loading App Store..." text */
+    font-size: 1.3rem; /* Adjust the size of the "Loading App Store..." text */
 }
 
 .crash-screen {
@@ -36,7 +36,6 @@ html, body {
     color: lime; /* Set console text color */
     font-family: monospace; /* Use monospace font for console effect */
     padding: 2rem; /* Add padding inside the crash screen */
-    border: 2px solid red; /* Add a red border */
     position: absolute; /* Position relative to the viewport */
     top: 50%; /* Center vertically */
     left: 50%; /* Center horizontally */
