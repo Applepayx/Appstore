@@ -17,7 +17,14 @@ body {
 }
 .loading-screen {
     text-align: center;
-    font-size: 2rem;
+}
+.loading-logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 1rem;
+}
+#loading-text {
+    font-size: 1.5rem;
 }
 .crash-screen {
     background: black;
