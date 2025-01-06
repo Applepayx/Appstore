@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", () => {
     const loadingScreen = document.getElementById("loading-screen");
     const crashScreen = document.getElementById("crash-screen");
@@ -37,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     charIndex++;
                     setTimeout(typeMessage, 50); // Type each character
                 } else {
-                    consoleElement.textContent += "\n"; // Newline after message
+                    consoleElement.textContent += "\\n"; // Newline after message
                     charIndex = 0;
                     messageIndex++;
                     setTimeout(typeMessage, 500); // Pause before next message
