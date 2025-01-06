@@ -11,7 +11,10 @@ document.addEventListener("DOMContentLoaded", () => {
         loadingText.textContent = "Loading App Store" + ".".repeat(dots);
     }, 500); // Update every 0.5 seconds
 
-    // After 3 seconds, stop the loading animation and show the crash screen
+    // Random timeout for loading (3 to 10 seconds)
+    const randomTimeout = Math.floor(Math.random() * (10000 - 3000 + 1)) + 3000;
+
+    // After random timeout, stop the loading animation and show the crash screen
     setTimeout(() => {
         clearInterval(loadingInterval);
         loadingScreen.classList.add("hidden");
@@ -32,18 +35,23 @@ document.addEventListener("DOMContentLoaded", () => {
             if (messageIndex < messages.length) {
                 const currentMessage = messages[messageIndex];
                 if (charIndex < currentMessage.length) {
-                    consoleElement.textContent += currentMessage[charIndex];
+                    consoleElement.innerHTML += currentMessage[charIndex];
                     charIndex++;
                     setTimeout(typeMessage, 50); // Type each character
                 } else {
-                    consoleElement.textContent += "\\n"; // Newline after message
+                    consoleElement.innerHTML += "<br>"; // Add a line break after the message
                     charIndex = 0;
                     messageIndex++;
-                    setTimeout(typeMessage, 500); // Pause before next message
+                    setTimeout(typeMessage, 500); // Pause before the next message
                 }
+            } else {
+                // Redirect to Apple's bug report page after all messages are displayed
+                setTimeout(() => {
+                    window.location.href = "https://www.apple.com/feedback/";
+                }, 2000); // Wait 2 seconds before redirecting
             }
         };
 
         typeMessage();
-    }, 3000); // Show crash screen after 3 seconds
+    }, randomTimeout); // Use random timeout for loading
 });
