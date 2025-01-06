@@ -28,7 +28,7 @@ html, body {
 }
 
 #loading-text {
-    font-size: 1.3rem; /* Adjust the size of the "Loading App Store..." text */
+    font-size: 1.2rem; /* Adjust the size of the "Loading App Store..." text */
 }
 
 .crash-screen {
