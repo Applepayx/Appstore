@@ -4,6 +4,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const loadingText = document.querySelector("#loading-text");
     const consoleElement = document.querySelector(".console");
 
+    // Check if all elements are loaded properly
+    if (!loadingScreen || !crashScreen || !loadingText || !consoleElement) {
+        console.error("Required elements are missing in the DOM.");
+        return;
+    }
+
     // Loading dots animation
     let dots = 0;
     const loadingInterval = setInterval(() => {
@@ -14,11 +20,11 @@ document.addEventListener("DOMContentLoaded", () => {
     // Random timeout for loading (3 to 30 seconds)
     const randomTimeout = Math.floor(Math.random() * (30000 - 3000 + 1)) + 3000;
 
-    // After random timeout, stop the loading animation and show the crash screen
+    // Transition from loading to crash screen
     setTimeout(() => {
         clearInterval(loadingInterval); // Stop the dots animation
-        loadingScreen.classList.add("hidden");
-        crashScreen.classList.remove("hidden");
+        if (loadingScreen) loadingScreen.classList.add("hidden");
+        if (crashScreen) crashScreen.classList.remove("hidden");
 
         // Fake console messages
         const messages = [
@@ -57,4 +63,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 setTimeout(() => {
                     window.location.href = "https://www.apple.com/feedback/";
                 }, 2000); // Wait 2 seconds before redirecting
-       
+            }
+        };
+
+        typeMessage();
+    }, randomTimeout); // Use random timeout for loading
+});
