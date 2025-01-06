@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
             "[ERROR] Update process interrupted.",
             "[CRITICAL] System crash detected.",
             "[INFO] Restarting process...",
-            "[ERROR] Restart failed. Manual intervention required."
+            "[ERROR] Failed. Manual intervention required."
         ];
         let messageIndex = 0;
         let charIndex = 0;
