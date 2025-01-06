@@ -28,7 +28,7 @@ html, body {
 }
 
 #loading-text {
-    font-size: 1.2rem; /* Adjust the size of the "Loading App Store..." text */
+    font-size: 1.5rem; /* Adjust the size of the "Loading App Store..." text */
 }
 
 .crash-screen {
@@ -47,3 +47,11 @@ html, body {
 
 .console {
     color: red; /* Set text color for console messages */
+    background: black; /* Console background color */
+    padding: 1rem; /* Add padding inside the console */
+    border-radius: 5px; /* Round the corners of the console */
+    overflow-y: auto; /* Enable vertical scrolling if content overflows */
+    max-height: 50vh; /* Limit the console height to half of the viewport */
+    font-size: 1rem; /* Adjust font size for better readability */
+    line-height: 1.5; /* Add line spacing for better readability */
+}
