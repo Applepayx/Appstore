@@ -1,3 +1,4 @@
+/* General styles for the entire page */
 html, body {
     margin: 0;
     padding: 0;
@@ -13,6 +14,7 @@ html, body {
     display: none; /* Hide elements when needed */
 }
 
+/* Loading screen styles */
 .loading-screen {
     text-align: center; /* Center content horizontally */
     position: absolute; /* Position it relative to the viewport */
@@ -28,12 +30,14 @@ html, body {
 }
 
 #loading-text {
-    font-size: 1.5rem; /* Adjust the size of the "Loading App Store..." text */
+    font-size: 2rem; /* Change the size for "Loading App Store" */
+    color: white; /* Text color */
 }
 
+/* Crash screen styles */
 .crash-screen {
     background: black; /* Keep crash screen background black */
-    color: lime; /* Set console text color */
+    color: lime; /* Default console text color */
     font-family: monospace; /* Use monospace font for console effect */
     padding: 2rem; /* Add padding inside the crash screen */
     position: absolute; /* Position relative to the viewport */
@@ -45,6 +49,13 @@ html, body {
     max-width: 600px; /* Limit the maximum width */
 }
 
+.crash-screen h1 {
+    color: white; /* Change color for "System Error" */
+    font-size: 2rem; /* Adjust font size for "System Error" */
+    text-align: center; /* Center the "System Error" text */
+}
+
+/* Console styles */
 .console {
     color: red; /* Set text color for console messages */
     background: black; /* Console background color */
@@ -54,4 +65,8 @@ html, body {
     max-height: 50vh; /* Limit the console height to half of the viewport */
     font-size: 1rem; /* Adjust font size for better readability */
     line-height: 1.5; /* Add line spacing for better readability */
+    word-wrap: break-word; /* Break long words to fit within the container */
+    white-space: pre-wrap; /* Preserve spaces and line breaks */
+    width: 100%; /* Ensure it fits within the parent container */
+    box-sizing: border-box; /* Include padding in the width calculation */
 }
