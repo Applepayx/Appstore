@@ -1,12 +1,12 @@
-/* Ensure the entire viewport and document is black */
 html, body {
     margin: 0;
     padding: 0;
-    background: black; /* Set background color to black */
+    background: black; /* Ensure the entire background is black */
     color: white; /* Default text color */
     overflow: hidden; /* Disable scrolling */
-    height: 100%; /* Ensure full height coverage */
-    width: 100%; /* Ensure full width coverage */
+    height: 100%; /* Ensure it covers the full height */
+    width: 100%; /* Ensure it covers the full width */
+    font-family: Arial, sans-serif; /* Set default font to Arial or similar */
 }
 
 .hidden {
@@ -15,6 +15,10 @@ html, body {
 
 .loading-screen {
     text-align: center; /* Center content horizontally */
+    position: absolute; /* Position it relative to the viewport */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for perfect centering */
 }
 
 .loading-logo {
@@ -24,15 +28,19 @@ html, body {
 }
 
 #loading-text {
-    font-size: 1.5rem; /* Make the loading text smaller */
+    font-size: 1.5rem; /* Adjust the size of the "Loading App Store..." text */
 }
 
 .crash-screen {
     background: black; /* Keep crash screen background black */
     color: lime; /* Set console text color */
     font-family: monospace; /* Use monospace font for console effect */
-    padding: 2rem; /* Add padding around the console area */
-    border: 2px solid red; /* Add a red border to the console */
+    padding: 2rem; /* Add padding inside the crash screen */
+    border: 2px solid red; /* Add a red border */
+    position: absolute; /* Position relative to the viewport */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for perfect centering */
     text-align: left; /* Align text to the left */
     width: 90%; /* Set width to 90% of the viewport */
     max-width: 600px; /* Limit the maximum width */
@@ -40,9 +48,3 @@ html, body {
 
 .console {
     color: red; /* Set text color for console messages */
-    background: black; /* Console background color */
-    padding: 1rem; /* Add padding inside the console box */
-    border-radius: 5px; /* Round the corners of the console box */
-    overflow: auto; /* Enable scrolling inside the console if content overflows */
-    max-height: 50vh; /* Limit the console height to half of the viewport height */
-}
