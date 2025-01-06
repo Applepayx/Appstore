@@ -1,6 +1,6 @@
 
 {
-    "name": "Apple Store",
+    "name": "App Store",
     "short_name": "AppStore",
     "start_url": "./index.html",
     "display": "standalone",
