@@ -4,12 +4,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const loadingText = document.querySelector("#loading-text");
     const consoleElement = document.querySelector(".console");
 
-    // Check if all elements are loaded properly
-    if (!loadingScreen || !crashScreen || !loadingText || !consoleElement) {
-        console.error("Required elements are missing in the DOM.");
-        return;
-    }
-
     // Loading dots animation
     let dots = 0;
     const loadingInterval = setInterval(() => {
@@ -23,10 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // After random timeout, stop the loading animation and show the crash screen
     setTimeout(() => {
         clearInterval(loadingInterval); // Stop the dots animation
-
-        // Transition to the crash screen
-        if (loadingScreen) loadingScreen.classList.add("hidden");
-        if (crashScreen) crashScreen.classList.remove("hidden");
+        loadingScreen.classList.add("hidden"); // Hide the loading screen
+        crashScreen.classList.remove("hidden"); // Show the crash screen
 
         // Fake console messages
         const messages = [
@@ -40,48 +32,25 @@ document.addEventListener("DOMContentLoaded", () => {
             "[DEBUG] Retrying in safe mode...",
             "[ERROR] Safe mode initialization failed.",
             "[WARNING] Disk space critically low.",
-            "[ERROR] Manual intervention required.",
-            "[INFO] Loading cache data...",
-            "[INFO] Cleaning temporary files...",
-            "[ERROR] Could not locate configuration file.",
-            "[DEBUG] Attempting to recover files...",
-            "[WARNING] High memory usage detected.",
-            "[INFO] Optimizing system performance...",
-            "[ERROR] Kernel panic detected.",
-            "[CRITICAL] Out of memory exception.",
-            "[INFO] Sending diagnostics report...",
-            "[ERROR] Diagnostics upload failed.",
-            "[INFO] Rebuilding system index...",
-            "[DEBUG] Testing fallback servers...",
-            "[ERROR] Fallback server not responding.",
-            "[INFO] Collecting crash logs...",
-            "[CRITICAL] System reboot required."
+            "[ERROR] Manual intervention required."
         ];
 
-        let messageIndex = 0;
-        let charIndex = 0;
+        let messageIndex = 0; // Start with the first message
 
         const typeMessage = () => {
             if (messageIndex < messages.length) {
-                const currentMessage = messages[messageIndex];
-                if (charIndex < currentMessage.length) {
-                    consoleElement.innerHTML += currentMessage[charIndex];
-                    charIndex++;
-                    setTimeout(typeMessage, 50); // Type each character
-                } else {
-                    consoleElement.innerHTML += "<br>"; // Add a line break after the message
-                    consoleElement.scrollTop = consoleElement.scrollHeight; // Scroll to the latest message
-                    charIndex = 0;
-                    messageIndex++;
-                    setTimeout(typeMessage, 500); // Pause before the next message
-                }
+                consoleElement.innerHTML += messages[messageIndex] + "<br>"; // Add message and break line
+                consoleElement.scrollTop = consoleElement.scrollHeight; // Scroll to the latest message
+                messageIndex++;
+                setTimeout(typeMessage, 500); // Wait before typing the next message
             } else {
-                // Redirect to Apple's bug report page after all messages are displayed
+                // After all messages, redirect to Apple's feedback page
                 setTimeout(() => {
                     window.location.href = "https://www.apple.com/feedback/";
-                }, 2000); // Wait 2 seconds before redirecting
+                }, 2000);
             }
         };
 
         typeMessage();
-    }, randomT
+    }, randomTimeout);
+});
