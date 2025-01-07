@@ -1,4 +1,4 @@
-html, body, {
+html, body {
     margin: 0;
     padding: 0;
     background: black;
@@ -7,7 +7,7 @@ html, body, {
     height: 100%;
     width: 100%;
     font-family: Arial, sans-serif;
-    user-select: none; /* Prevent text selection globally */
+    
 }
 
 .hidden {
@@ -20,6 +20,7 @@ html, body, {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    
 }
 
 .loading-logo {
@@ -45,12 +46,14 @@ html, body, {
     text-align: left;
     width: 90%;
     max-width: 600px;
+    
 }
 
 .crash-screen h1 {
     color: white;
     font-size: 2rem;
     text-align: center;
+    
 }
 
 .console {
@@ -66,4 +69,5 @@ html, body, {
     white-space: pre-wrap;
     width: 100%;
     box-sizing: border-box;
+    
 }
