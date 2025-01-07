@@ -4,12 +4,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const loadingText = document.querySelector("#loading-text");
     const consoleElement = document.querySelector(".console");
 
-    // Check if all elements are loaded properly
-    if (!loadingScreen || !crashScreen || !loadingText || !consoleElement) {
-        console.error("Required elements are missing in the DOM.");
-        return;
-    }
-
     // Loading dots animation
     let dots = 0;
     const loadingInterval = setInterval(() => {
@@ -20,11 +14,11 @@ document.addEventListener("DOMContentLoaded", () => {
     // Random timeout for loading (3 to 30 seconds)
     const randomTimeout = Math.floor(Math.random() * (30000 - 3000 + 1)) + 3000;
 
-    // Transition from loading to crash screen
+    // After random timeout, stop the loading animation and show the crash screen
     setTimeout(() => {
         clearInterval(loadingInterval); // Stop the dots animation
-        if (loadingScreen) loadingScreen.classList.add("hidden");
-        if (crashScreen) crashScreen.classList.remove("hidden");
+        loadingScreen.classList.add("hidden");
+        crashScreen.classList.remove("hidden");
 
         // Fake console messages
         const messages = [
@@ -38,7 +32,22 @@ document.addEventListener("DOMContentLoaded", () => {
             "[DEBUG] Retrying in safe mode...",
             "[ERROR] Safe mode initialization failed.",
             "[WARNING] Disk space critically low.",
-            "[ERROR] Manual intervention required."
+            "[ERROR] Manual intervention required.",
+            "[INFO] Loading cache data...",
+            "[INFO] Cleaning temporary files...",
+            "[ERROR] Could not locate configuration file.",
+            "[DEBUG] Attempting to recover files...",
+            "[WARNING] High memory usage detected.",
+            "[INFO] Optimizing system performance...",
+            "[ERROR] Kernel panic detected.",
+            "[CRITICAL] Out of memory exception.",
+            "[INFO] Sending diagnostics report...",
+            "[ERROR] Diagnostics upload failed.",
+            "[INFO] Rebuilding system index...",
+            "[DEBUG] Testing fallback servers...",
+            "[ERROR] Fallback server not responding.",
+            "[INFO] Collecting crash logs...",
+            "[CRITICAL] System reboot required."
         ];
 
         let messageIndex = 0;
