@@ -34,7 +34,7 @@ html, body {
 }
 
 #loading-text {
-    font-size: 1.2rem; /* Adjust the size for "Loading App Store" */
+    font-size: 2rem; /* Adjust the size for "Loading App Store" */
     color: white; /* Text color */
 }
 
