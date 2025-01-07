@@ -8,10 +8,14 @@ html, body {
     height: 100%; /* Ensure it covers the full height */
     width: 100%; /* Ensure it covers the full width */
     font-family: Arial, sans-serif; /* Set default font to Arial or similar */
+    -webkit-touch-callout: none; /* Disable callouts on iOS */
+    -webkit-user-select: none; /* Disable text selection on iOS */
+    -webkit-overflow-scrolling: none; /* Prevent scroll bounce on iOS */
 }
 
+/* Hide elements when needed */
 .hidden {
-    display: none; /* Hide elements when needed */
+    display: none; 
 }
 
 /* Loading screen styles */
@@ -30,7 +34,7 @@ html, body {
 }
 
 #loading-text {
-    font-size: 1.2rem; /* Change the size for "Loading App Store" */
+    font-size: 1.2rem; /* Adjust the size for "Loading App Store" */
     color: white; /* Text color */
 }
 
@@ -50,7 +54,7 @@ html, body {
 }
 
 .crash-screen h1 {
-    color: white; /* Change color for "System Error" */
+    color: red; /* Change color for "System Error" */
     font-size: 2rem; /* Adjust font size for "System Error" */
     text-align: center; /* Center the "System Error" text */
 }
