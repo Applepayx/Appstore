@@ -1,4 +1,6 @@
 html, body {
+    -webkit-user-select: none; /* Prevent text selection on iOS Safari */
+    -webkit-touch-callout: none; /* Disable long press context menus */
     margin: 0;
     padding: 0;
     background: black;
