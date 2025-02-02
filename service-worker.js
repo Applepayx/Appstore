@@ -3,8 +3,6 @@ const CACHE_NAME = 'apple-store-pwa-cache-v1';
 const urlsToCache = [
     './',
     './index.html',
-    './css/styles.css',
-    './js/main.js',
     './images/icons/icon-512x512.png',
     './images/loading-image.png',
 ];
